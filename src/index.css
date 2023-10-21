@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #f2fdfc;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #003000;
+  height: 100vh;
+  line-height: 22px;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  text-align: center;
+  margin: 80px 0;
+  
+}
+nav {
+  display: flex;
+  justify-content: end;
+  padding: 14px 18px;
+  background: #dbcd05;
+  font-size: 18px;
+  height: 60px;
+}
+.links a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: #fff;
+}
+.links a:hover {
+  color: #f31414;
+}
+.wrapper {
+text-align: center;
+}
+.repos {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 300px);
+  background: #f2fdfc;
+  margin: 16px 0;
+}
+.repos p {
+  display: grid;
+  grid-template-columns: 200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 30px 14px;
+  background: #fff;
+  color: #000000d8;
+  text-align: center;
+}
+.repos p:hover {
+  box-shadow: 5px 3px 8px rgba(0, 0, 0, 0.5);
+  color: #2fd6f3;
+}
+.repo-container {
+display: flex;
+flex-direction: column;
+width: 100%;
+height: 100vh;
+align-items: center;
+justify-content: center;
+}
+.repo-info {
+background: #fff;
+width: 600px;
+padding: 28px;
+border-radius: 8px;
+box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+h2, h3 {
+font-size: 16px;
+
+}
+.repo-info h2, h3, p {
+padding: 16px;
+color: #020008f1;
+} 
+.return-btn, .wrapper .explore {
+background: #5774f5;
+margin-top: 26px ;
+padding: 10px 18px;
+color: #fff;
+border-radius: 25px;
+}
+.error {
+text-align: center;
+margin-top: 40px;
+}
+.error .btn {
+margin: 10px;
+padding: 4px;
+background: #e6e5e5;
+color: #2b51f8;
+}
+.fallback {
+text-align: center;
+}
+.btn {
+margin: 60px;
+text-align: center;
+}
+.spinner {
+text-align: center;
+}
+.loader {
+width: 48px;
+height: 48px;
+border:10px solid #FFF;
+border-radius: 50%;
+position: relative;
+transform:rotate(45deg);
+box-sizing: border-box;
+}
+.loader::before {
+content: "";
+position: absolute;
+box-sizing: border-box;
+inset:-10px;
+border-radius: 50%;
+border:10px solid #FF3D00;
+animation: prixClipFix 2s infinite linear;
+}
+
+@keyframes prixClipFix {
+  0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+  25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+  50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+  75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+  100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+}
+
+
+@media screen and (max-width: 480px) {
+nav {
+  display: none;
+}
+.repos {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 180px);
+  background: #f2fdfc;
+  margin: 16px 0;
+}
+.repos p {
+display: grid;
+grid-template-columns: 100px;
+border: 1px solid #ccc;
+border-radius: 8px;
+margin: 10px;
+padding: 16px 14px;
+
+}
+h1 {
+padding: 6px;
+line-height: 38px;
+}
+.repo-info {
+width: 300px;
+}
+}
