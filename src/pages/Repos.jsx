@@ -2,10 +2,13 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Spinner from '../components/Spinner';
+import NotFound from '../components/NotFound';
+
 
 function Repos() {
     const [repos, setRepos] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null)
 
     const URL = 'https://api.github.com/users/aadon/repos';
     useEffect(() => {
@@ -16,14 +19,17 @@ function Repos() {
             setIsLoading(false)
             console.log(response)
             } catch (error) {
+                setError(<NotFound />)
             }
         })(); 
     }, []);
 
   return (
     <>
-     <Link className='btn' to='/'>Home Page</Link>
     {isLoading && <div className="spinner"><Spinner /></div> }
+    {error ? (<div className='fetch-err'>
+        <p>{error}</p>
+    </div>) : (
        <div className='repo-list'>
        <h1>MY GITHUB REPOSITORIES</h1>
        <div  className='repos'>
@@ -38,6 +44,8 @@ function Repos() {
          </div>  
         
      </div>
+     )}
+     <Link className='btn' to='/'>Back</Link>
    
     </>
   )

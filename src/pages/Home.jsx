@@ -13,6 +13,7 @@ function Home() {
       <p>Welcome to my Github repository</p>
 
       <Link className="explore" to="repos">Explore</Link>
+      <Link className="explore" to="testerror">Test Error</Link>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
-// import App from './App.jsx'
+ import TestError from './pages/TestError'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
@@ -22,6 +22,10 @@ const routes = [
           {
             path: '/',
             element: <Home />
+          },
+          {
+            path: 'testerror',
+            element: <TestError />
           },
           {
             path: 'repos',
