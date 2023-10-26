@@ -2,26 +2,19 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
-import NotFound from "../components/NotFound";
 
-function RepoDetails() {
+const RepoDetails = () => {
   const [repo, setRepo] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
   const { repoId } = useParams();
 
   useEffect(() => {
     (async () => {
-      try {
         const response = await axios.get(
           `https://api.github.com/repositories/${repoId}`
         );
         setRepo(response.data);
         setIsLoading(false);
-        console.log(response.data);
-      } catch (error) {
-        setError(<NotFound />)
-      }
     })();
   }, []);
 
@@ -32,12 +25,7 @@ function RepoDetails() {
           <Spinner />
         </div>
       )}
-      {error ? (
-        <div className="fetch-err">
-          <p>{error}</p>
-        </div>
-      ) : (
-        <div className="repo-container">
+         <div className="repo-container">
           <div className="repo-info">
             <h2>Repository Name: {repo.name}</h2>
             <h3>Language: {repo.language}</h3>
@@ -45,12 +33,10 @@ function RepoDetails() {
             <p>Date and Time: {repo.created_at}</p>
             <p>Description: {repo.description}</p>
           </div>
-
           <Link className="return-btn" to="/repos">
             Go Back
           </Link>
         </div>
-      )}
     </>
   );
 }

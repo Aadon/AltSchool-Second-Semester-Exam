@@ -1,8 +1,6 @@
-
 import { Link } from "react-router-dom";
 
-function Home() {
-    
+const Home = () => {
   return (
     <div className="wrapper">
       <h1>Hello 😎!</h1>
@@ -12,10 +10,14 @@ function Home() {
       <p>An AltSchool Africa Software Engineering (V2) Student</p>
       <p>Welcome to my Github repository</p>
 
-      <Link className="explore" to="repos">Explore</Link>
-      <Link className="explore" to="testerror">Test Error</Link>
+      <Link className="explore" to="repos">
+        Explore
+      </Link>
+      <Link className="explore" to="testerror">
+        Test Error
+      </Link>
     </div>
   );
-}
+};
 
 export default Home;

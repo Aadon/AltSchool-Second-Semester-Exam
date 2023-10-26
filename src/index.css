@@ -81,7 +81,7 @@ h3 {
 .repo-info h2,
 h3,
 p {
-  padding: 16px;
+  padding-bottom: 16px;
   color: #020008f1;
 }
 .return-btn,
@@ -97,26 +97,35 @@ p {
 }
 .error {
   text-align: center;
-  /* margin-top: 40px; */
   font-size: 18px;
 }
-
-.fallback {
+.error-text {
   text-align: center;
+}
+.form-control {
+  font-size: 20px;
+  margin-top: 60px;
+}
+input {
+  margin-left: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+}
+code {
+  font-size: 22px;
+}
+h1 {
+  line-height: 1.5;
 }
 .btn {
   display: flex;
- justify-content: center;
+  justify-content: center;
   height: 100px;
   padding: 10px 18px;
   color: #030202;
   border-radius: 25px;
   color: #5774f5;
-}
-.fetch-err {
-  text-align: center;
-  margin-top: 60px;
-  font-size: 18px;
 }
 .spinner {
   text-align: center;
@@ -164,7 +173,7 @@ p {
   .repos {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(2, minmax(200px, auto))
+    grid-template-columns: repeat(2, minmax(200px, auto));
   }
   .repos p {
     display: grid;
@@ -173,8 +182,10 @@ p {
   .repo-info {
     width: auto;
   }
-} 
-
+  .error-text {
+    margin-top:  40px;
+  }
+}
 
 @media screen and (max-width: 480px) {
   nav {
@@ -195,10 +206,12 @@ p {
   }
   h1 {
     padding: 6px 14px;
-    line-height: 38px;
+    line-height: 1.5;
   }
   .repo-info {
     width: auto;
   }
+  .error-text {
+    margin-top:  40px;
+  }
 }
- 
